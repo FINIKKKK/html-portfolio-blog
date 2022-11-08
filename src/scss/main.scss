@@ -1,0 +1,212 @@
+// --------- main ----------
+.main {
+  margin-bottom: 150px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .inner {
+    width: 70%;
+    margin-right: 50px;
+  }
+  .sidebar {
+    width: 30%;
+  }
+}
+
+// --------- posts ----------
+.posts {
+  .post {
+    &:not(:last-child) {
+      margin-bottom: 110px;
+    }
+  }
+}
+
+// --------- footer ----------
+.footer {
+  background-color: $white;
+  padding: 11px 0;
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .copy {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+  .soclist {
+    display: flex;
+    align-items: center;
+  }
+  .soclist__item {
+    &:not(:last-child) {
+      margin-right: 11px;
+    }
+    svg {
+      fill: $main;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+// --------- pagination ----------
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .list,
+  .skip {
+    display: flex;
+    align-items: center;
+  }
+  .item {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: $gray;
+    svg {
+      fill: $main;
+      width: 10px;
+      height: 15px;
+    }
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+    &.disabled {
+      pointer-events: none;
+    }
+    &.active {
+      color: #fff;
+      border-radius: 50%;
+      background-color: $main;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .input {
+    margin-right: 15px;
+  }
+}
+
+// --------- post ----------
+.post {
+  .img {
+    width: 100%;
+    height: 413px;
+    margin-bottom: 25px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    .item {
+      position: relative;
+      color: $gray;
+      &:not(:last-child) {
+        padding-right: 20px;
+        &::after {
+          content: '|';
+          position: absolute;
+          right: 7px;
+        }
+      }
+    }
+  }
+  .title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+    &:hover {
+      color: $main;
+    }
+  }
+  .text {
+    font-size: 16px;
+    line-height: 27px;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+  }
+}
+
+// --------- sidebar ----------
+.sidebar {
+  .block {
+    margin-bottom: 45px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 15px;
+  }
+  .categories {
+    .item {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .posts {
+    .post {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      .post__title {
+        margin-bottom: 8px;
+      }
+      .info {
+        display: flex;
+        color: $gray;
+        font-size: 14px;
+        line-height: 18px;
+        p:not(:last-child) {
+          padding-right: 15px;
+          position: relative;
+          &::after {
+            content: '|';
+            position: absolute;
+            right: 4px;
+          }
+        }
+      }
+    }
+  }
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    .tag {
+      font-weight: 700;
+      border-radius: 14px;
+      border: 1px solid $gray;
+      padding: 5px 15px;
+      margin-bottom: 10px;
+      color: $gray;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}

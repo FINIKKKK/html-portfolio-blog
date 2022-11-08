@@ -1,14 +1,5 @@
-// --------- Fonts ----------
-@import "./_fonts.scss";
-
-
-// --------- Main ----------
-@import "./_reset.scss";
-@import "./_global.scss";
-@import "./main.scss";
-
-// --------- Plugins ----------
-
-
-// --------- Media ----------
-@import "./media.scss";
+@import './_fonts.scss';
+@import './_reset.scss';
+@import './_variables.scss';
+@import './_global.scss';
+@import './main.scss';
