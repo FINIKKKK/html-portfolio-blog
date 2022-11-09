@@ -12,6 +12,11 @@
   .sidebar {
     width: 30%;
   }
+  .inner__title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
 }
 
 // --------- posts ----------
@@ -58,6 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 70px;
   .list,
   .skip {
     display: flex;
@@ -111,6 +117,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    a.item {
+      &:hover {
+        color: $main;
+      }
+    }
     .item {
       position: relative;
       color: $gray;
@@ -151,6 +162,36 @@
 .sidebar {
   .block {
     margin-bottom: 45px;
+  }
+  .search {
+    width: 100%;
+    position: relative;
+    input {
+      width: 100%;
+      border: 1px solid #000;
+      border-radius: 20px;
+      font-size: 14px;
+      line-height: 28px;
+      padding: 6px 18px;
+      transition: 0.2s;
+      &::placeholder {
+        color: $gray;
+      }
+    }
+    svg {
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      fill: $gray;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        fill: $main;
+      }
+    }
   }
   .title {
     font-weight: 700;
@@ -197,16 +238,200 @@
     flex-wrap: wrap;
     margin-right: -10px;
     margin-bottom: -10px;
-    .tag {
+    .item {
       font-weight: 700;
-      border-radius: 14px;
-      border: 1px solid $gray;
+      border-radius: 25px;
+      border: 1px solid #000;
       padding: 5px 15px;
       margin-bottom: 10px;
-      color: $gray;
+      color: #000;
       &:not(:last-child) {
         margin-right: 10px;
       }
+      &:hover {
+        color: #fff;
+        background-color: $main;
+        border-color: transparent;
+      }
     }
+  }
+}
+
+// --------- header ----------
+.header {
+  margin-bottom: 45px;
+  .down {
+    width: 100%;
+    height: 40px;
+    background-color: $white;
+  }
+}
+
+// --------- register ----------
+.register {
+  width: 80%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .inner {
+    display: flex;
+    background: #ffffff;
+    box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.25);
+  }
+  .form {
+    width: 50%;
+  }
+  .img {
+    width: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// --------- form ----------
+.form {
+  position: relative;
+  padding: 100px 100px 65px;
+  .title {
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  .text {
+    // font-weight: 700;
+    font-size: 12px;
+    color: $gray;
+    margin-bottom: 27px;
+  }
+  .inputs {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+  .btn {
+    padding: 9px 50px;
+  }
+  .link {
+    position: absolute;
+    left: 50%;
+    bottom: 44px;
+    transform: translateX(-50%);
+    // font-weight: 700;
+    font-size: 12px;
+    color: $gray;
+    a {
+      color: $main;
+    }
+  }
+}
+
+// --------- comments ----------
+.comments {
+  .title {
+    font-weight: 700;
+    margin-bottom: 23px;
+    font-size: 20px;
+  }
+  .input {
+    width: 100%;
+  }
+}
+
+// --------- comment ----------
+.comment {
+  display: flex;
+  .avatar {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  .info {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 23px;
+    .name {
+      font-weight: 700;
+    }
+    .date {
+      color: $gray;
+    }
+  }
+  .message {
+    .text {
+      font-size: 16px;
+      line-height: 27px;
+      margin-bottom: 5px;
+    }
+    .message__btn {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      margin-left: auto;
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+}
+
+// --------- error404 ----------
+.error404 {
+  display: flex;
+  align-items: center;
+  .content {
+    margin-right: 150px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 224px;
+    line-height: 282px;
+  }
+  .text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+  .btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .img {
+    width: 450px;
+    height: 650px;
+  }
+}
+
+// --------- notFound ----------
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+  .img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .text {
+    width: 70%;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
   }
 }

@@ -13,18 +13,17 @@
         <div class="container">
             <div class="main__inner">
                 <div class="inner">
-                    <h3 class="inner__title">Поиск по "nkfekf"</h3>
-                    <!-- <h3 class="inner__title">Категория "Дизайн"</h3> -->
 
-                    <!-- @@include('./blocks/notFound.html') -->
-                    
-                    <div class="posts">
-                        @@include('./blocks/post.html')
-                        @@include('./blocks/post.html')
-                        @@include('./blocks/post.html')
+
+                    <div class="comments">
+                        <h4 class="title">Комменты:</h4>
+                        <input type="text" class="input" placeholder="Введите комментарий: ">
+
+                        <div class="list">
+                            @@include('./blocks/comment.html')
+                        </div>
                     </div>
 
-                    @@include('./blocks/pagination.html')
                 </div>
 
                 @@include('./blocks/sidebar.html')
