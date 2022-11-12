@@ -38,14 +38,16 @@
     justify-content: space-between;
   }
   .copy {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 16px;
     font-weight: 700;
   }
-  .soclist {
-    display: flex;
-    align-items: center;
-  }
+}
+
+// --------- soclist ----------
+.soclist {
+  display: flex;
+  align-items: center;
   .soclist__item {
     &:not(:last-child) {
       margin-right: 11px;
@@ -56,16 +58,16 @@
     transition: 0.2s;
     background-color: $main;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     svg {
       margin-top: 7px;
       fill: #fff;
-      width: 18px;
-      height: 15px;
+      width: 15px;
+      height: 12px;
     }
   }
 }
@@ -86,7 +88,14 @@
     font-size: 18px;
     line-height: 23px;
     color: $gray;
+    &:hover {
+      color: #000;
+      svg {
+        fill: #000;
+      }
+    }
     svg {
+      transition: 0.2s;
       fill: $main;
       width: 10px;
       height: 15px;
@@ -106,9 +115,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      pointer-events: none;
     }
   }
   .input {
+    text-align: center;
+    max-width: 55px;
+    font-weight: 700;
     margin-right: 15px;
   }
 }
@@ -295,13 +308,13 @@
   .title {
     font-weight: 700;
     font-size: 35px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .text {
-    // font-weight: 700;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 14px;
     color: $gray;
-    margin-bottom: 27px;
+    margin-bottom: 25px;
   }
   .inputs {
     margin-bottom: 30px;
@@ -309,13 +322,28 @@
   }
   .input {
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px 10px;
     font-size: 14px;
+    border-width: 2px;
+    border-color: rgba(#000, 0.2);
+    &::placeholder {
+      color: rgba(#000, 0.4);
+    }
     &:not(:last-child) {
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
   }
+  .forgot {
+    margin-top: -23px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
   .btn {
+    display: block;
     padding: 9px 50px;
   }
   .link {
@@ -323,7 +351,7 @@
     left: 50%;
     bottom: 44px;
     transform: translateX(-50%);
-    // font-weight: 700;
+    font-weight: 700;
     font-size: 12px;
     color: $gray;
     a {
@@ -537,5 +565,162 @@
         margin-right: 20px;
       }
     }
+  }
+  .toProfile {
+    position: relative;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    span {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: $main;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 7px;
+      padding-top: 2px;
+      color: #fff;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// --------- profile ----------
+.profile {
+  margin-bottom: 150px;
+  .inner {
+    display: flex;
+  }
+  .left {
+    margin-right: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right {
+    margin-top: 35px;
+    position: relative;
+  }
+  .avatar {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 30px;
+  }
+  .label {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 15px;
+    span {
+      font-weight: 700;
+    }
+  }
+  .btn {
+  }
+  .name {
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 39px;
+    margin-bottom: 25px;
+  }
+  .description {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 34px;
+    color: $gray;
+    margin-bottom: 55px;
+  }
+  .edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      fill: $main;
+    }
+  }
+  .soclist__item {
+    width: 44px;
+    height: 44px;
+    svg {
+      width: 25px;
+      height: 20px;
+    }
+    &:not(:last-child) {
+      margin-right: 33px;
+    }
+  }
+}
+
+// --------- userPosts ----------
+.userPosts {
+  margin-bottom: 150px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .search {
+    position: relative;
+    border-color: rgba(#000, 0.5);
+    input {
+      width: 100%;
+      height: 100%;
+      font-weight: 700;
+    }
+    svg {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      fill: $gray;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .item {
+    width: 285px;
+  }
+  .img {
+    width: 100%;
+    height: 159px;
+    background-color: $gray;
+    margin-bottom: 15px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .item__title {
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 5px;
+  }
+  .date {
+    font-size: 14px;
+    line-height: 28px;
+    color: $gray;
   }
 }
