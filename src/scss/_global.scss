@@ -58,8 +58,13 @@ button {
   color: #fff;
   transition: 0.3s;
   &:hover {
-    background: #000;
+    background-color: #000;
     color: #fff;
+  }
+  &.disabled {
+    color: #a39c9c;
+    background-color: #d0ccc3;
+    pointer-events: none;
   }
 }
 .btn2 {
@@ -69,61 +74,51 @@ button {
 }
 
 .input {
-  font-family: $font;
-  padding: 6px 10px;
-  border-radius: 24px;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 18px;
-  color: #000;
-  border: 1px solid #000;
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
-.input-block {
   position: relative;
-  .input {
+  &.error {
+    input {
+      border-color: #d34d4d !important;
+      color: #d34d4d;
+    }
+  }
+  input {
     font-family: $font;
-    padding: 6px 21px;
+    padding: 6px 10px;
     border-radius: 24px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    background: rgba(#000, 0.75);
-    padding: 11px 16px;
-    border: 1px solid transparent;
+    color: #000;
     transition: 0.2s;
-    &::placeholder {
-      color: #fff;
-    }
-    &:hover,
+    padding-right: 30px;
+    width: 100%;
+    border: 1px solid $gray;
     &:focus {
-      border: 1px solid rgba(#fff, 0.45);
+      border-color: #000 !important;
+    }
+    &::placeholder {
+      color: $gray;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
-  &.input-error {
-    input {
-      border: 1px solid rgb(95, 8, 8);
+  svg {
+    position: absolute;
+    width: 20px;
+    height: auto;
+    fill: $gray;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      fill: #000;
     }
   }
-}
-.error {
-  position: absolute;
-  bottom: -5px;
-  right: 15px;
-  z-index: 30;
-  background-color: rgb(95, 8, 8);
-  color: #000;
-  padding: 0px 5px;
-  font-size: 10px;
-  line-height: 14px;
 }
 
 .wrapper {
